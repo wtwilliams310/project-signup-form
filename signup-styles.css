@@ -38,11 +38,13 @@ p, h1, h2, h3, h4, h5, h6 {
 	/*primary*/
 	--clr-red: 	rgba(255,122,122,.92);
 	--clr-green: hsl(154, 59%, 51%);
+	--clr-light-green: hsl(154, 65%, 68%);
 	--clr-blue: hsl(248, 32%, 49%);
 
 	/*neutral*/
 	--clr-dark-blue: hsl(249, 10%, 26%);
 	--clr-gray-blue: hsl(246, 25%, 77%);
+	--clr-white: white;
 
 	/*font*/
 	--ff-poppins: 'Poppins', sans-serif;
@@ -57,28 +59,22 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
 	background-color: var(--clr-red);
 	background-image: url("./images/bg-intro-mobile.png");
-/*	margin: 5.5rem 1.5rem .5rem 1.5rem;*/
 	font-family: var(--ff-poppins);
-
-
 }
 
+
 .card {
-/*	max-height: 950px;*/
 	display: grid;
 	gap: 1.4em;
 	margin: 5.5rem 1.5rem 2.5rem;
-
-
-
 }
+
 
 .description {
 	display: grid;
 	gap: 1.5em;
-	color: white;
+	color: var(--clr-white);
 	text-align: center;
-
 }
 
 .title {
@@ -91,9 +87,16 @@ body {
 	font-weight: var(--fw-medium);
 }
 
+.content {
+	display: grid;
+
+	gap: 1.4em;
+	margin-bottom: 2.5rem;
+}
+
 .price-banner {
 	margin-top: 2.75rem;
-	color: white;
+	color: var(--clr-white);
 	background-color: var(--clr-blue);
 	text-align: center;
 	font-size: 15px;
@@ -109,14 +112,15 @@ body {
 .card-form {
 	display: grid;
 	gap: 1em;
-	text-align: center;	
-	background-color: white;
+	text-align: right;	
+	background-color: var(--clr-white);
 	padding: 1.5rem 1.5rem 2rem;
 	border-radius: 10px;
 
 }
 
-input {
+.input-field {
+	position: relative;
 }
 
 .card-form input {
@@ -124,9 +128,28 @@ input {
 	border-radius: 5px;
 	border: .5px solid lightgray;
 	padding: 1rem;
-
 	font-size: 14px;
 	font-weight: var(--fw-semiBold);
+}
+
+.card-form input:focus {
+	outline-color: var(--clr-red);
+}
+
+.icon {
+	position: absolute;
+	right: 15px;
+	bottom: 40px;
+	z-index: 999;
+}
+
+.warning {
+	color: var(--clr-red);
+	font-size: 11px;
+	font-style: italic;
+	font-weight: var(--fw-medium);
+
+
 }
 
 #submit {
@@ -135,14 +158,23 @@ input {
 	border: none;
 	box-shadow: 0px 5px 0px hsl(151, 50%, 48%);
 	letter-spacing: 1px;
-/*	padding-bottom: .7rem;*/
 }
+
+#submit:hover,
+#submit:focus {
+	background-color: var(--clr-light-green);
+	box-shadow: 0px 5px 0px hsl(151, 50%, 62%);
+	cursor: pointer;
+	outline: none;
+}
+
 
 .disclaimer {
 	font-size: 11px;
 	padding: 0px 1rem;
 	color: var(--clr-gray-blue);
 	font-weight: var(--fw-medium);
+	text-align: center;
 }
 
 .disclaimer span {
@@ -152,6 +184,86 @@ input {
 }
 
 
+@media screen and (min-width: 900px) {
+
+	body {
+		background-image: url("./images/bg-intro-desktop.png");
+	}
+
+	/*.card {
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3em;
+		margin: 6.5rem 9.5rem;
+
+	}
+
+	.description {
+		width: 50%;
+		margin: auto;
+		text-align: left;
+	}
+
+
+
+	.title {
+		font-size: 50px;
+		line-height: 55px;
+	}
+
+	.content {
+		padding: 0;
+		width: 50%;
+		margin-bottom: 0;
+		padding: 2rem 0;
+	}
+
+	.price-banner {
+		margin: 0;
+	}
+
+	.card-form {
+		padding-bottom: ;
+	}*/
+
+	.card {
+		margin: auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3em;
+		margin: 7.3rem 9.5rem;
+
+	}
+
+	.description {
+/*		width: 50%;*/
+		margin: auto;
+		text-align: left;
+		gap: 3em;
+	}
+
+
+
+	.title {
+		font-size: 50px;
+		line-height: 55px;
+	}
+
+
+	.content {
+		padding: 0 .2rem 0 .55rem;
+		margin-bottom: 0;
+	}
+
+	.price-banner {
+		margin: 0;
+	}
+
+	.card-form {
+		padding-bottom: ;
+	}
+}
 
 
 
