@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Challenge solution](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1)
+- Solution URL: [Challenge solution](https://www.frontendmentor.io/solutions/intro-component-with-signup-form-JS7ATNYf5w)
 - Live Site URL: [My solution](https://wtwilliams310.github.io/signup-form/)
 
 
